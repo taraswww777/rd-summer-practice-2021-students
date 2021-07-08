@@ -19,3 +19,10 @@ li {
     padding: 150px;
     height: 140px;
 }
+
+.game-timer-ok {
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    padding: 10px 0;
+}
