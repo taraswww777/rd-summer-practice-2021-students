@@ -1,0 +1,21 @@
+div.statistics {
+    color: black;
+    width: 60%;
+    text-align: left;
+}
+
+div.log {
+    color: black;
+    width: 60%;
+    text-align: left;
+}
+
+li {
+    list-style-type: none;
+}
+
+.field {
+   background-color: gray;
+    padding: 150px;
+    height: 140px;
+  }
