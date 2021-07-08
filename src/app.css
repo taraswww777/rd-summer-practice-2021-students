@@ -1,0 +1,87 @@
+body {
+    background-color:rgba(105, 105, 105, 0.301);
+}
+
+span {
+    float:right;
+}
+
+.Timebar {
+    float:center;
+    text-align: center;
+    margin-left:5%;
+    margin-right: 5%;
+    color:rgba(255, 255, 255, 0.781);
+}
+
+#Bar {
+    height: 3%;
+    background-color:thistle;
+    border-radius: 10px;
+    width:100%
+}
+
+.container3 {
+    float:center;
+    text-align: center;
+    height:1000px;
+    background-color:rgba(0, 0, 0, 0.795);
+}
+
+.buttons {
+    float:center;
+    text-align: center;
+
+}
+
+.col {
+    margin: 10%;
+    text-align: left;
+    background-color:rgba(128, 128, 128, 0.61);
+    border-radius: 10px;
+    border: 1px rgba(255, 255, 255, 0.671);
+    color: rgba(255, 255, 255, 0.493);
+    border-style:solid;
+    padding: 2px;
+    height:10%;
+}
+
+#health {
+    background-color:red;
+    border-radius: 10px;
+    border: 1px black;
+    border-style:solid;
+    padding: 2px;
+    color:black;
+}
+#coin {
+    background-color:yellow;
+    border-radius: 10px;
+    border: 1px black;
+    border-style:solid;
+    padding: 2px;
+    color:black;
+}
+
+.btn_control{
+    background-color: Transparent;
+    color: rgba(255, 255, 255, 0.671);
+    border: 1px solid rgba(255, 255, 255, 0.671);
+    border-radius: 8px; 
+}
+
+.btn_control:active {
+    background-color: #b9b4b4;
+    }
+
+#btn_exit{
+    background-color: Transparent;
+    color: #ec2323;
+    border: 2px solid #e62323;
+    border-radius: 8px; 
+    border-color
+}
+
+#btn_exit:active {
+    background-color: #b9b4b4;
+    }
