@@ -1,0 +1,14 @@
+.menu-button {
+    border-radius: 6px;
+    height: 34px;
+    border: 2px solid #808080;
+    cursor: pointer;
+    background-color: #2C2C2D;
+    
+    color: #7F8384;
+    }
+    
+    .menu-button:focus {
+    border-color: #D11316;
+    color: #D11316;
+    }
