@@ -1,4 +1,5 @@
 # RD summer practice 2021
+# First day of development branch
 
 ## Работа
 Для отладки можно вписать `debugger` в нужное место кода
