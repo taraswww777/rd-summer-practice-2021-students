@@ -17,100 +17,100 @@ div {
 }
 
 .button {
-    border: none;
-    color: white;
-    padding: 14px 28px;
-    border-radius: 8px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 10px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-        }
+                border: none;
+                color: white;
+                padding: 14px 28px;
+                border-radius: 8px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 10px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+                    }
 
-.button1 {
-    background-color: rgba(65, 33, 33, 0.89); 
-    color: white; 
-    border: 2px solid rgba(65, 33, 33, 0.89);
-        }
+            .button1 {
+                background-color: rgba(81, 197, 58, 0.89); 
+                color: white; 
+                border: 2px solid rgba(81, 197, 58, 0.89);
+                    }
 
-.button1:hover {
-        background-color:rgb(31, 5, 5) ;
-        color: white;
-                }
+            .button1:hover {
+                    background-color:rgba(87, 175, 69, 0.89) ;
+                    color: white;
+                            }
 
-.button2 {
-    background-color: rgba(65, 33, 33, 0.89); 
-    color: white; 
-    border: 2px solid rgba(65, 33, 33, 0.89);
-        }
+            .button2 {
+                background-color:royalblue; 
+                color: white; 
+                border: 2px solid royalblue;
+                    }
 
-.button2:hover {
-        background-color:rgb(31, 5, 5) ;
-        color: white;
-                }
-.button3 {
-    background-color: rgba(65, 33, 33, 0.89); 
-    color: white; 
-    border: 2px solid rgba(65, 33, 33, 0.89);
-        }
+            .button2:hover {
+                    background-color:rgb(87, 117, 207) ;
+                    color: white;
+                            }
+            .button3 {
+                background-color: royalblue; 
+                color: white; 
+                border: 2px solid royalblue;
+                    }
 
-.button3:hover {
-        background-color:rgb(31, 5, 5) ;
-        color: white;
-                }
-.button4 {
-    background-color: rgba(65, 33, 33, 0.89); 
-    color: white; 
-    border: 2px solid rgba(65, 33, 33, 0.89);
-        }
+            .button3:hover {
+                    background-color:rgb(87, 117, 207) ;
+                    color: white;
+                            }
+            .button4 {
+                background-color: royalblue; 
+                color: white; 
+                border: 2px solid royalblue;
+                    }
 
-.button4:hover {
-        background-color:rgb(31, 5, 5) ;
-        color: white;
-                }
-.button5 {
-    background-color: rgba(65, 33, 33, 0.89); 
-    color: white; 
-    border: 2px solid rgba(65, 33, 33, 0.89);
-        }
+            .button4:hover {
+                    background-color: rgb(87, 117, 207) ;
+                    color: white;
+                            }
+            .button5 {
+                background-color: royalblue; 
+                color: white; 
+                border: 2px solid royalblue;
+                    }
 
-.button5:hover {
-        background-color:rgb(31, 5, 5) ;
-        color: white;
-                }
-.button6 {
-    background-color: rgba(65, 33, 33, 0.89); 
-    color: white; 
-    border: 2px solid rgba(65, 33, 33, 0.89);
-        }
+            .button5:hover {
+                    background-color: rgb(87, 117, 207);
+                    color: white;
+                            }
+            .button6 { 
+                background-color: red; 
+                color: white; 
+                border: 2px solid red;
+                    }
 
-.button6:hover {
-        background-color:rgb(31, 5, 5) ;
-        color: white;
-                }
-.button7 {
-    background-color: rgba(65, 33, 33, 0.89); 
-    color: white; 
-    border: 2px solid rgba(65, 33, 33, 0.89);
-        }
+            .button6:hover {
+                    background-color: rgb(209, 51, 51);
+                    color: white;
+                            }
+            .button7 { 
+                background-color: red; 
+                color: white; 
+                border: 2px solid red;
+                    }
 
-.button7:hover {
-        background-color:rgb(31, 5, 5) ;
-        color: white;
-                }
-.button8 {
-    background-color: rgba(65, 33, 33, 0.89); 
-    color: white; 
-    border: 2px solid rgba(65, 33, 33, 0.89);
-        }
+            .button7:hover {
+                    background-color:rgb(209, 51, 51) ;
+                    color: white;
+                            }
+            .button8 { 
+                background-color: red; 
+                color: white; 
+                border: 2px solid red;
+                    }
 
-.button8:hover {
-        background-color:rgb(31, 5, 5) ;
-        color: white;
- }
+            .button8:hover {
+                    background-color:rgb(209, 51, 51) ;
+                    color: white;
+                            }
 
  .side-panel{
     position: flex;
