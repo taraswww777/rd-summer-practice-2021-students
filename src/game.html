@@ -13,33 +13,65 @@
 </head>
 
 <body>
-    <div class="TitleGameClass" id ="TitleGameId">
-        
-    </div>
-    <h1 id="TimeGameId" align="center">00:00</h1>
-    <div>
-        <!-- Середина-->
-        <div class="side-panel left-side">
-            <h4>Команда 1</h4>
-            <p>Жизни:<strong id="team1-lives">3</strong></p>
-            <p>Монеты:<strong id="team1-coins"> 3</strong></p>
+    <div class="TitleGameClass HeaderTextColor" id ="TitleGameId" align="center"><h1>Полицейские и мошенники</h1></div>
+    <h1 class="HeaderTextColor" align="center">00:00</h1>
+    <div class="container">
+        <div class="side-panel">
+            <table class="side-panel-table">
+                <tr>
+                    <td colspan="2">
+                        <h4>Команда 1</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Жизни:</td>
+                    <td>
+                    <strong>3</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Монеты:</td>
+                    <td>
+                        <strong>3</strong>
+                    </td>
+                </tr>
+            </table>
         </div>
-        <div></div>
-        <div></div>
+        <div class="game-canvas">
+
+        </div>
+        <div class="side-panel">
+            <table class="side-panel-table">
+                <tr>
+                    <td colspan="2">
+                        <h4>Команда 2</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Жизни:</td>
+                    <td>
+                    <strong>3</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Монеты:</td>
+                    <td>
+                        <strong>3</strong>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <div>
-        <!-- Низ-->
-        
-
-            <button class="button button1">К списку игр</button>
-            <button class="button button2">Начать игру</button>
-            <button class="button button3">Подключиться к игре (случайно)</button>
-            <button class="button button4">Подключиться к полиции</button>
-            <button class="button button5">Подключиться к мошенникам</button>
-            <button class="button button6">Покинуть игру</button>
-            <button class="button button7">Пауза</button>
-            <button class="button button8">Прервать игру</button>
-
+    
+    <div id="ButtonContainer">
+            <button onclick="" class="button buttonBackGroundBlue">К списку игр</button>
+            <button onclick="" class="button buttonBackGroundGreen">Начать игру</button>
+            <button onclick="" class="button buttonBackGroundPurple">Подключиться к игре (случайно)</button>
+            <button onclick="" class="button buttonBackGroundPurple">Подключиться к полиции</button>
+            <button onclick="" class="button buttonBackGroundPurple">Подключиться к мошенникам</button>
+            <button onclick="" class="button buttonBackGroundRed">Покинуть игру</button>
+            <button onclick="" class="button buttonBackGroundRed">Пауза</button>
+            <button onclick="" class="button buttonBackGroundRed">Прервать игру</button>
     </div>
 </body>
 
