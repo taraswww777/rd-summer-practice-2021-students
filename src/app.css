@@ -1,14 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+}
+
+.container {
+    width: 100%;
+    background-color: #487cc0;
+}
+
+.game-section {
+    padding: 0 5%;
+}
+
+.header {
+    font-size: 40px;
+    text-align: center;
+}
+
+.progress-area {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-bar {
+    height: 20px;
+    width: 100%;
+    background-color: rgb(227, 248, 107);
+    border-radius: 5px;
+}
+
+.time {
+    border: 3px solid #ffffff;
+    padding: 5px;
+    margin-top: 15px;
+    font-size: 40px;
+}
+
+.game-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-area {
+    padding: 30px 30px;
+    background-color: #454545;
+    height: fit-content;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
+
+.team-header {
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+.info-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.info-lifes {
+    background-color: #951815;
+    padding: 5px;
+    color: #2c2c2c;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.info-money {
+    background-color: rgb(83, 199, 93);
+    padding: 5px;
+    color: #2c2c2c;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.game-map {
+    margin: 0 180px;
+    width: 70%;
+    height: 500px;
+    background-color: #fff;
+}
+
+.manage-section {
+    padding: 50px 5%;
+}
+
+.game-manage-area {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.manage-list {
+    display: flex;
+    text-decoration: none;
+}
+
+.manage-list li {
+    margin: 2px;
+}
+
+.btn-container {
+    display: inline;
+    justify-content: center;
+}
 .menu-button {
     border-radius: 6px;
     height: 34px;
     border: 2px solid #808080;
     cursor: pointer;
     background-color: #2C2C2D;
-    
-    color: #7F8384;
-    }
-    
-    .menu-button:focus {
-    border-color: #D11316;
-    color: #D11316;
-    }
+    color: #ffffff;
+}
+
+.menu-button:focus {
+    border-color: #ffe867;
+    color: #ffe867;
+}
