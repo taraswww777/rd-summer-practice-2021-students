@@ -881,8 +881,7 @@
                 // TODO Task 3.1 повешайте обработчики событий
                 var btns = this.btns;
                 var $lastKey = -1;
-                btns.$btnGameList.
-                btns.$btnStart.btns.$btnGameList.click(function () {
+                btns.$btnGameList.click(function () {
                     window.location.replace("index.html");
                 });
                 btns.$btnStart.click(function () {
