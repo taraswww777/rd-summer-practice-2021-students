@@ -758,7 +758,7 @@
                  *  можно использовать $('selector')
                  */
                 return {
-                    // $gameCaption: ,
+                    $gameCaption: $('#gameCaption'),
                     // $switchTimer: ,
                     // team1: {
                     //     $container: ,
@@ -795,7 +795,7 @@
             function getImages() {
                 // TODO Task1.3 Объявление переменных и их связка с DOM
                 return {
-                    // imgHeart: ,
+                    imgHeart: $('#img_heart').get(0),
                     // imgCoin: ,
                     // imgPolice: ,
                     // imgPoliceSelf: ,
