@@ -12,42 +12,85 @@
 </head>
 <body>
 <!-- TODO: Task 0. Построить вёрстку приложения по макету используя для сетки bootstrap -->
+<<<<<<< Updated upstream
 <div class="container">
     <section class="game-section">
         <div class="headname">
             <span>Полицейские и Мошенники</span>
         </div>
+=======
+<div class="wrapper">
+    <section class="header-section">
+        <div class="game-caption-name">
+
+        </div>
+        <div class="game-caption-status game-caption-status-{status}">
+
+        </div>
+    </section>
+    <section class="game-section">
+>>>>>>> Stashed changes
         <div class="progress-area">
             <div class="progress-bar">
 
             </div>
+<<<<<<< Updated upstream
             <div class="countdown">
+=======
+            <div class="countdown" id="switch-timer">
+>>>>>>> Stashed changes
                 <span>00:00</span>
             </div>
         </div>
         <div class="game-area">
+<<<<<<< Updated upstream
             <div class="left-team team-area">
+=======
+            <div class="left-team team-area" id="left-team">
+>>>>>>> Stashed changes
                 <div class="team-header">
                     <span>Команда №1</span>
                 </div>
                 <div class="team-info">
                     <ul class="info-list">
+<<<<<<< Updated upstream
                         <li><span>Жизни: </span> <span class="info-value-lifes">0</span></li>
                         <li><span>Монеты: </span> <span class="info-value-money">0</span></li>
+=======
+                        <li class="team-players"><span>Игроки: </span> <span class="info-value">0</span></li>
+                        <li class="team-lives"><span>Жизни: </span> <span class="info-value">0</span></li>
+                        <li class="team-coins"><span>Монеты: </span> <span class="info-value">0</span></li>
+                        <li class="team-deaths"><span>Смерти: </span> <span class="info-value">0</span></li>
+>>>>>>> Stashed changes
                     </ul>
                 </div>
             </div>
             <div class="game-map">
+<<<<<<< Updated upstream
 
             </div>
             <div class="right-team team-area">
+=======
+                <canvas id="map-canvas">
+
+                </canvas>
+            </div>
+            <div class="right-team team-area" id="rigth-team">
+>>>>>>> Stashed changes
                 <div class="team-header">
                     <span>Команда №2</span>
                 </div>
                 <div class="team-info">
                     <ul class="info-list">
+<<<<<<< Updated upstream
                         <li><span>Жизни: </span> <span class="info-value-lifes">0</span></li>
                         <li><span>Монеты: </span> <span class="info-value-money">0</span></li>
+=======
+                        <li class="team-players"><span>Игроки: </span> <span class="info-value">0</span></li>
+                        <li class="team-lives"><span>Жизни: </span> <span class="info-value">0</span></li>
+                        <li class="team-coins"><span>Монеты: </span> <span class="info-value">0</span></li>
+                        <li class="team-deaths"><span>Смерти: </span> <span class="info-value">0</span></li>
+>>>>>>> Stashed changes
                     </ul>
                 </div>
             </div>
@@ -56,6 +99,7 @@
     <section class="manage-section">
         <div class="game-manage-area">
             <ul class="manage-list">
+<<<<<<< Updated upstream
                 <li><button class="manage-btn">К списку игр</button></li>
                 <li><button class="manage-btn">Начать игру</button></li>
                 <li><button class="manage-btn">Подключиться к игре (случайно)</button></li>
@@ -64,6 +108,16 @@
                 <li><button class="manage-btn">Покинуть игру</button></li>
                 <li><button class="manage-btn">Пауза</button></li>
                 <li><button class="manage-btn" id="game-stop-button">Прервать игру</button></li>
+=======
+                <li><button class="manage-btn" id="game-list-button">К списку игр</button></li>
+                <li><button class="manage-btn" id="game-start-button">Начать игру</button></li>
+                <li><button class="manage-btn" id="game-connect-button">Подключиться к игре (случайно)</button></li>
+                <li><button class="manage-btn" id="game-police-button">Поключиться к полиции</button></li>
+                <li><button class="manage-btn" id="game-thief-button">Подключиться к мошенникам</button></li>
+                <li><button class="manage-btn" id="game-leave-button">Покинуть игру</button></li>
+                <li><button class="manage-btn" id="game-pause-button">Пауза</button></li>
+                <li><button class="manage-btn" id="game-cancel-button">Прервать игру</button></li>
+>>>>>>> Stashed changes
             </ul>
         </div>
     </section>
