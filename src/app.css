@@ -6,23 +6,6 @@
     font-family: Arial, Helvetica, sans-serif;
     color: #b8b8b8;
 }
-<<<<<<< Updated upstream
-
-.container {
-    width: 100%;
-    background-color: #2c2c2c;
-}
-
-.game-section {
-    padding: 0 5%;
-}
-
-.headname {
-    font-size: 40px;
-    text-align: center;
-}
-
-=======
 .wrapper {
     width: 100%;
     background-color: #2c2c2c;
@@ -30,171 +13,92 @@
 .game-section {
     padding: 0 5%;
 }
->>>>>>> Stashed changes
 .progress-area {
     padding: 50px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-<<<<<<< Updated upstream
-
-.progress-bar {
-    height: 20px;
-    width: 100%;
-    background-color: rgb(121, 121, 121);
-    border-radius: 5px;
-}
-
-=======
 .progress-bar {
     height: 20px;
     width: 100%;
     background-color: #fff;
     border-radius: 5px;
 }
->>>>>>> Stashed changes
 .countdown {
     margin-top: 15px;
     font-size: 40px;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .game-area {
     display: flex;
     justify-content: space-between;
 }
-<<<<<<< Updated upstream
-
-.team-area {
-    padding: 30px 30px;
-=======
 .left-team {
 }
 .team-area {
     padding: 5px 10px;
->>>>>>> Stashed changes
     background-color: #454545;
     height: fit-content;
     border-radius: 5px;
     border: 1px solid #fff;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .team-header {
     text-decoration: underline;
     margin-bottom: 5px;
 }
-<<<<<<< Updated upstream
-
-=======
 .team-info {
 }
 .info-list {
 }
->>>>>>> Stashed changes
 .info-list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
 }
-<<<<<<< Updated upstream
-
-.info-value-lifes {
-    background-color: #951815;
-    padding: 5px;
-    color: #2c2c2c;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.info-value-money {
-    background-color: rgb(226, 142, 15);
-=======
 .info-value {
     background-color: #fff;
->>>>>>> Stashed changes
     padding: 5px;
     color: #2c2c2c;
     border-radius: 5px;
     font-weight: bold;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .game-map {
     margin: 0 25px;
     width: 70%;
     height: 500px;
     background-color: #fff;
 }
-<<<<<<< Updated upstream
-
-.manage-section {
-    padding: 50px 5%;
-}
-
-=======
 .right-team {
 }
 .manage-section {
     padding: 50px 5%;
 }
->>>>>>> Stashed changes
 .game-manage-area {
     width: fit-content;
     margin: 0 auto;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .manage-list {
     display: flex;
     text-decoration: none;
 }
-<<<<<<< Updated upstream
-
 .manage-list li {
     margin: 2px;
 }
-
-=======
-.manage-list li {
-    margin: 2px;
-}
->>>>>>> Stashed changes
 .manage-btn {
     padding: 5px 10px;
     background-color: #2c2c2c;
     border: 2px solid #fff;
     border-radius: 5px;
 }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 .manage-btn:hover {
     cursor: pointer;
     border-color: #fff;
 }
-<<<<<<< Updated upstream
-
-#game-stop-button {
-    border-color: #951815;
-    color: #fff;
-=======
 #game-stop-button {
     border-color: #951815;
     color: #fff;
 }
 #game-stop-button:hover {
     background-color: #fff;
->>>>>>> Stashed changes
 }
