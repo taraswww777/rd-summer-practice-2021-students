@@ -12,7 +12,11 @@
     <title>Игра - Полицейские и Мошенники</title>
 </head>
 <body>
-    <h1 align="center">Полицейские и мошенники</h1>
+    <div id="game" class = "container">
+        <div id="main">
+            <div id="gameCaption">
+                <h1 align="center">Полицейские и мошенники</h1>
+            </div>
     <hr>
      <div name="timer">
          <h3>Осталось времени до смены ролей: </h3>
@@ -24,20 +28,22 @@
      <table width=100%>
          <tr>
              <td valign="top" width=28%><div class="statistics">
-                 <ul>
-                     <li><b>Название команды: </b></li>
-                     <li>Очки: </li>
-                     <li>Осталось жизней: </li>
+                 <ul id="team1">
+                     <li id="team1Caption"><b>Название команды: </b></li>
+                     <li id="team1Users">Игроки: </li>
+                     <li id="team1Coins">Очки: </li>
+                     <li id="team1Lives">Осталось жизней: </li>
                  </ul>
                  <br>
-                 <ul>
-                     <li><b>Название команды: </b></li>
-                     <li>Очки: </li>
-                     <li>Осталось жизней: </li>
+                 <ul id="team2">
+                     <li id="team2Caption"><b>Название команды: </b></li>
+                     <li id="team2Users">Игроки: </li>
+                     <li id="team2Coins">Очки: </li>
+                     <li id="team2Lives">Осталось жизней: </li>
                  </ul>
              </div></td>
              <td width=40%>
-                 <div class="field"></div>
+                 <div id="gameCanvas" class="field"></div>
              </td>
              <td valign="top">
                 <div>
@@ -57,6 +63,13 @@
          <button id="btnPause" type="button" class="btn btn-outline-secondary">Пауза</button>
          <button id="btnCancel" type="button" class="btn btn-outline-danger">Прервать игру</button>
      </div>
+    </div>  <!--я не уверена что он должен закрываться здесь-->
+
+    <div id="console"></div>
+    <div id="loading"></div>
+    <div id="loadError"></div>
+
+
 <div class="hidden">
     <img id="img_heart"
          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJzdmdfaGVhcnQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9
