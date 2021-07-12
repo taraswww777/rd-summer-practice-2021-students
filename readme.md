@@ -1,6 +1,6 @@
 # RD summer practice 2021
 
-# First day of development branch
+# Second day of development branch
 
 ## Команда проекта:
 * Климчук Н. В.
