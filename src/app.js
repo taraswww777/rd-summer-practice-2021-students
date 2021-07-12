@@ -40,7 +40,7 @@
             return gameInfo && gameInfo.owner && gameInfo.owner.id &&
                 gameApi && gameApi.questor && gameApi.questor.user &&
                 (gameApi.questor.user.isAdmin ||
-                gameInfo.owner.id.toLowerCase() === gameApi.questor.user.id.toLowerCase());
+                    gameInfo.owner.id.toLowerCase() === gameApi.questor.user.id.toLowerCase());
         };
 
         utils.unpackMap = function (map) {
@@ -78,33 +78,33 @@
         gameList.GameTable = (function() {
             var tableHeader =
                 "<tr>" +
-                    "<td colspan='7' class='idx-game-header'>Список активных игр</td>" +
+                "<td colspan='7' class='idx-game-header'>Список активных игр</td>" +
                 "</tr>" +
                 "<tr class='idx-game-col-header'>" +
-                    "<th>Имя</th>" +
-                    "<th>Автор</th>" +
-                    "<th>Создана</th>" +
-                    "<th>Статус</th>" +
-                    "<th>Макс. Пол./Мош.</th>" +
-                    "<th>Подкл. Пол./Мош.</th>" +
-                    "<th></th>" +
+                "<th>Имя</th>" +
+                "<th>Автор</th>" +
+                "<th>Создана</th>" +
+                "<th>Статус</th>" +
+                "<th>Макс. Пол./Мош.</th>" +
+                "<th>Подкл. Пол./Мош.</th>" +
+                "<th></th>" +
                 "</tr>";
             var tableFooter =
                 "<tr>" +
-                    "<td colspan='7' class='idx-game-footer'>" +
-                        "<a class='idx-create-game-link link-btn' href='newgame.html'>Создать Игру</a>" +
-                    "</td>" +
+                "<td colspan='7' class='idx-game-footer'>" +
+                "<a class='idx-create-game-link link-btn' href='newgame.html'>Создать Игру</a>" +
+                "</td>" +
                 "</tr>";
             var tableRow =
                 "<tr class='idx-game-row game-status-{status}'>" +
-                    "<td>" +
-                        "<a class='idx-game-link' href='game.html?gameId={gameId}'>{name}</a>" +
-                    "</td>" +
-                    "<td>{owner}</td>" +
-                    "<td>{created}</td>" +
-                    "<td>{statusName}</td>" +
-                    "<td>{maxTeamSize}/{maxTeamSize}</td>" +
-                    "<td>{teamPoliceSize}/{teamThiefSize}</td>" +
+                "<td>" +
+                "<a class='idx-game-link' href='game.html?gameId={gameId}'>{name}</a>" +
+                "</td>" +
+                "<td>{owner}</td>" +
+                "<td>{created}</td>" +
+                "<td>{statusName}</td>" +
+                "<td>{maxTeamSize}/{maxTeamSize}</td>" +
+                "<td>{teamPoliceSize}/{teamThiefSize}</td>" +
                 "</tr>";
             var gameCancel = "<a class='idx-game-cancel' href='#'>Завершить</a>";
 
@@ -233,7 +233,7 @@
             var mapSelectOption = "<option value='{mapId}'>{mapName}</option>";
 
             function GameForm($form, $formContainer, $mapSelect, $gameListBtn, $createGameBtn,
-                              $loading, $error, gameApi) {
+                $loading, $error, gameApi) {
                 this.$form = $form;
                 this.$formContainer = $formContainer;
                 this.$mapSelect = $mapSelect;
@@ -755,60 +755,63 @@
                  * TODO Task1. Объявление переменных и их связка с DOM
                  *  Для получения доступа к DOM элементу следует
                  *  использовать document.getElementById('elementId')
-                 *  можно использовать $('selector')
                  */
                 return {
-                    $gameCaption: $('#gameCaption'),
-                    // $switchTimer: ,
-                    // team1: {
-                    //     $container: ,
-                    //     $caption: ,
-                    //     $players: ,
-                    //     $lives: ,
-                    //     $coins:
-                    // },
-                    // team2: {
-                    //     $container: ,
-                    //     $caption: ,
-                    //     $players: ,
-                    //     $lives: ,
-                    //     $coins:
-                    // },
-                    // mapBuffer: null,
-                    // $mapCanvas: ,
-                    // mapCellSize: 25
+                    $gameCaption: $("#gameCaption"),
+                    $switchTimer: $("#switchTimer"),
+                    team1: {
+                        $container: $("#team1"),
+                        $caption: $("#team1Caption"),
+                        $players: $("#team1users"),
+                        $lives: $("#team1Lives"),
+                        $coins: $("#team1Coins")
+                    },
+                    team2: {
+                        $container: $("#team2"),
+                        $caption: $("#team2Caption"),
+                        $players: $("#team2users"),
+                        $lives: $("#team2Lives"),
+                        $coins: $("#team2Coins")
+                    },
+                    mapBuffer: null,
+                    $mapCanvas: $("#gameCanvas"),
+                    mapCellSize: 25
                 };
             }
             function getButtons() {
-                // TODO Task1.2 Объявление переменных и их связка с DOM
+                // TODO Task1.1 Объявление переменных и их связка с DOM
                 return {
-                    // $btnGameList:,
-                    // $btnStart:,
-                    // $btnConnect:,
-                    // $btnConnectPolice:,
-                    // $btnConnectThief:,
-                    // $btnLeave:,
-                    // $btnPause:,
-                    // $btnCancel:
+                    $btnGameList: $("#btnGameList"),
+                    $btnStart: $("#btnStart"),
+                    $btnConnect: $("#btnConnect"),
+                    $btnConnectPolice: $("#btnConnectPolice"),
+                    $btnConnectThief: $("#btnConnectThief"),
+                    $btnLeave: $("#btnLeave"),
+                    $btnPause: $("#btnPause"),
+                    $btnCancel: $("#btnCancel")
                 };
             }
             function getImages() {
-                // TODO Task1.3 Объявление переменных и их связка с DOM
+                // TODO Task1.2 Объявление переменных и их связка с DOM
                 return {
                     imgHeart: $('#img_heart').get(0),
-                    // imgCoin: ,
-                    // imgPolice: ,
-                    // imgPoliceSelf: ,
-                    // imgThief: ,
-                    // imgThiefSelf: ,
-                    // imgSwitch:
+                    imgCoin: $('#img_coin').get(0),
+                    imgPolice: $('#img_police').get(0),
+                    imgPoliceSelf: $('#img_police_self').get(0),
+                    imgThief: $('#img_thief').get(0),
+                    imgThiefSelf: $('#img_thief_self').get(0),
+                    imgSwitch: $('#img_switch').get(0)
                 };
             }
             function setMapCanvasSizing($canvas, width, height) {
                 /**
                  * TODO Task 2. Опишите функцию которая задаст размеры игрового поля
                  */
-                return $canvas;
+                return $canvas
+                    .css("width", width + "px")
+                    .css("height", height + "px")
+                    .attr("width", width + "px")
+                    .attr("height", height + "px");
             }
             function drawMapField(canvas, map, width, height, cellSize) {
                 var ctx = canvas.getContext("2d");
@@ -865,20 +868,42 @@
                 c.captionChanged.add(function (name, status){
                     this.setGameCaption(name, status);
                 }.bind(this));
-                // c.invalidGame
-                // c.mapChanged
-                // c.playerChanged
-                // c.statusChanged
-                // c.synced
-                // c.syncing
-                // c.teamCaptionChanged
-                // c.teamCoinsChanged
-                // c.teamLivesChanged
-                // c.teamPlayersChanged
-                // c.timerChanged
+                c.invalidGame.add(function () {
+                    this.showError();
+                }.bind(this));
+                c.mapChanged.add(function (map) {
+                    this.updateMap(map);
+                }.bind(this));
+                c.playerChanged.add(function (player) {
+                    this.updatePlayer(player);
+                }.bind(this));
+                c.statusChanged.add(function (status) {
+                    this.setButtons(status);
+                    this.toggleRotation(status);
+                }.bind(this));
+                c.synced.add(function () {
+                    this.show();
+                }.bind(this));
+                c.syncing.add(function () {
+                    this.showLoading();
+                }.bind(this));
+                c.teamCaptionChanged.add(function (team) {
+                    this.updateTeamCaption(team);
+                }.bind(this));
+                c.teamCoinsChanged.add(function (team) {
+                    this.updateTeamCoins(team);
+                }.bind(this));
+                c.teamLivesChanged.add(function (team) {
+                    this.updateTeamLives(team);
+                }.bind(this));
+                c.teamPlayersChanged.add(function (team) {
+                    this.updateTeam(team);
+                }.bind(this));
+                c.timerChanged.add(function (data) {
+                    this.setTimer(data);
+                }.bind(this));
             };
             GameView.prototype.bindButtons = function () {
-                // TODO Task 3.1 повешайте обработчики событий
                 var btns = this.btns;
                 var $lastKey = -1;
                 btns.$btnGameList.click(function () {
@@ -887,12 +912,24 @@
                 btns.$btnStart.click(function () {
                     this.state.game.start();
                 }.bind(this));
-                // btns.$btnConnect.
-                // btns.$btnConnectPolice.
-                // btns.$btnConnectThief.
-                // btns.$btnLeave.
-                // btns.$btnPause.
-                // btns.$btnCancel.
+                btns.$btnConnect.click(function () {
+                    this.state.game.join(GameApi.GameTeamRole.random);
+                }.bind(this));
+                btns.$btnConnectPolice.click(function () {
+                    this.state.game.join(GameApi.GameTeamRole.police);
+                }.bind(this));
+                btns.$btnConnectThief.click(function () {
+                    this.state.game.join(GameApi.GameTeamRole.thief);
+                }.bind(this));
+                btns.$btnLeave.click(function () {
+                    this.state.game.leave();
+                }.bind(this));
+                btns.$btnPause.click(function () {
+                    this.state.game.pause();
+                }.bind(this));
+                btns.$btnCancel.click(function () {
+                    this.state.game.cancel();
+                }.bind(this));
                 $(window).on('keydown', function(event) {
                     if ($lastKey === event.keyCode) {
                         return;
@@ -1044,18 +1081,18 @@
                  */
                 return $(app.utils.t(
                     "<div id='player{playerId}' class='game-player game-player-status-{status}'>" +
-                        "<span class='game-player-name'>{name}</span>" +
-                        " [<span class='game-player-coins'>{coins}</span>;" +
-                        "<span class='game-player-lives'>{lives}</span>;" +
-                        "<span class='game-player-deaths'>{deaths}</span>]" +
+                    "<span class='game-player-name'>{name}</span>" +
+                    " [<span class='game-player-coins'>{coins}</span>;" +
+                    "<span class='game-player-lives'>{lives}</span>;" +
+                    "<span class='game-player-deaths'>{deaths}</span>]" +
                     "</div>", {
-                    playerId: player.id,
-                    status: status,
-                    name: player.name,
-                    coins: player.coins,
-                    lives: player.lives,
-                    deaths: player.deaths
-                }));
+                        playerId: player.id,
+                        status: status,
+                        name: player.name,
+                        coins: player.coins,
+                        lives: player.lives,
+                        deaths: player.deaths
+                    }));
             };
             GameView.prototype.updatePlayer = function (player) {
                 var $p = $("#player" + player.id);
@@ -1082,8 +1119,8 @@
                     .empty()
                     .append(app.utils.t(
                         "<div class='game-team-{role}-caption'>" +
-                            "<span class='game-team-name'>{name}</span> " +
-                            "<span class='game-team-role game-team-role-{role}'>{roleName}</span>" +
+                        "<span class='game-team-name'>{name}</span> " +
+                        "<span class='game-team-role game-team-role-{role}'>{roleName}</span>" +
                         "</div>", {
                             role: role,
                             roleName: team.role === GameApi.GameTeamRole.police ? "полиция" : "мошенники",
@@ -1130,21 +1167,113 @@
                  *    this.state.getPlayer(currentUserId) - пользователь в игре?
                  *    this.btns - кнопки тут
                  */
+                status = status || this.state.status;
+                var btns = this.btns;
+                if (status === GameApi.GameStatus.canceled || status === GameApi.GameStatus.finished) {
+                    btns.$btnStart.addClass("hidden");
+                    btns.$btnLeave.addClass("hidden");
+                    btns.$btnPause.addClass("hidden");
+                    btns.$btnCancel.addClass("hidden");
+                    btns.$btnConnect.addClass("hidden");
+                    btns.$btnConnectThief.addClass("hidden");
+                    btns.$btnConnectPolice.addClass("hidden");
+                    return;
+                }
+                var currentUser = this.state.gameApi.questor.user.id;
+                var isOwner = currentUser === this.state.owner.id;
+                var isAdmin = this.state.gameApi.questor.user.isAdmin;
+                var connected = this.state.getPlayer(currentUser) ? true : false;
+
+                if (this.state.status === GameApi.GameStatus.open || this.state.status === GameApi.GameStatus.ready) {
+                    btns.$btnPause.addClass("hidden");
+                    if (isOwner) {
+                        btns.$btnStart.removeClass("hidden");
+                        btns.$btnCancel.removeClass("hidden");
+                    }
+                    else {
+                        btns.$btnStart.addClass("hidden");
+                        if (isAdmin) {
+                            btns.$btnCancel.removeClass("hidden");
+                        } else {
+                            btns.$btnCancel.addClass("hidden");
+                        }
+                    }
+                    if (connected) {
+                        btns.$btnLeave.removeClass("hidden");
+                        btns.$btnConnect.addClass("hidden");
+                        btns.$btnConnectThief.addClass("hidden");
+                        btns.$btnConnectPolice.addClass("hidden");
+                    }
+                    else {
+                        btns.$btnLeave.addClass("hidden");
+                        btns.$btnConnect.removeClass("hidden");
+                        btns.$btnConnectThief.removeClass("hidden");
+                        btns.$btnConnectPolice.removeClass("hidden");
+                    }
+                    return;
+                }
+                if (this.state.status === GameApi.GameStatus.starting || this.state.status === GameApi.GameStatus.inProcess) {
+                    btns.$btnStart.addClass("hidden");
+                    btns.$btnLeave.addClass("hidden");
+                    btns.$btnConnect.addClass("hidden");
+                    btns.$btnConnectThief.addClass("hidden");
+                    btns.$btnConnectPolice.addClass("hidden");
+                    if (isOwner) {
+                        btns.$btnPause.removeClass("hidden");
+                        btns.$btnCancel.removeClass("hidden");
+                    }
+                    else {
+                        btns.$btnPause.addClass("hidden");
+                        if (isAdmin) {
+                            btns.$btnCancel.removeClass("hidden");
+                        } else {
+                            btns.$btnCancel.addClass("hidden");
+                        }
+                    }
+                }
+                else {
+                    if (isOwner) {
+                        btns.$btnStart.removeClass("hidden");
+                        btns.$btnCancel.removeClass("hidden");
+                    }
+                    else {
+                        btns.$btnStart.addClass("hidden");
+                        if (isAdmin) {
+                            btns.$btnCancel.removeClass("hidden");
+                        } else {
+                            btns.$btnCancel.addClass("hidden");
+                        }
+                    }
+                    btns.$btnPause.addClass("hidden");
+                    btns.$btnLeave.addClass("hidden");
+                    btns.$btnConnect.addClass("hidden");
+                    btns.$btnConnectThief.addClass("hidden");
+                    btns.$btnConnectPolice.addClass("hidden");
+                }
             };
             GameView.prototype.showLoading = function () {
                 /**
                  * TODO: Task 9. Опишите доступность элементов при загрузке игры $container $error $loading
                  */
+                this.$container.addClass("hidden");
+                this.$error.addClass("hidden");
+                this.$loading.removeClass("hidden");
             };
             GameView.prototype.showError = function () {
                 /**
                  * TODO: Task 10. Опишите доступность элементов при загрузке игры $container $error $loading
                  */
+                this.$container.addClass("hidden");
+                this.$loading.addClass("hidden");
+                this.$error.removeClass("hidden");
             };
             GameView.prototype.show = function () {
                 /**
                  * TODO: Task 11. Опишите доступность элементов при загрузке игры $container $error $loading
                  */
+                this.$loading.addClass("hidden");
+                this.$error.addClass("hidden");
+                this.$container.removeClass("hidden");
             };
 
             return GameView;

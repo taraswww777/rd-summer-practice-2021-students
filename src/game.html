@@ -4,14 +4,66 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="app.css" />
     <!--  TODO: Раскомментировать при начале работы с сервером -->
-<!--    <script src="modernizr.js"></script>-->
-<!--    <script src="/js/jquery.js"></script>-->
-<!--    <script src="/js/jquery.signalR.js"></script>-->
-<!--    <script src="/js/gameApi.js"></script>-->
+    <script src="modernizr.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/jquery.signalR.js"></script>
+    <script src="/js/gameApi.js"></script>
     <title>Игра - Полицейские и Мошенники</title>
 </head>
 <body>
 <!-- TODO: Task 0. Построить вёрстку приложения по макету используя для сетки bootstrap -->
+<div class="header">
+    <h1>Полицейские и Мошенники</h1>
+</div>
+<div id="loading" class="loading">
+    <h2>Ожидание синхронизации...</h2>
+</div>
+<div id='loadError' class="loadError hidden">
+    <h3>Выбранная игра отсутствует на сервере. Вернуться к
+        <a href="index.html">списку игр</a>.
+    </h3>
+</div>
+<div id="game" class="hidden">
+    <div id="main">
+        <div id="gameCaption"></div>
+        <div id="switchTimer"><span class='game-timer-ok'>00:00</span></div>
+        <div id="team1">
+            <div>
+                <span id="team1Caption" class="teamCaption">Комманда 1</span>
+            </div>
+            <div id="team1Stats">
+                <div class="teamLives">Жизни: <span id="team1Lives">0</span></div>
+                <div class="teamCoins">Монеты: <span id="team1Coins">0</span></div>
+            </div>
+            <div id="team1users"></div>
+        </div>
+        <div id="map">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div id="team2">
+            <div>
+                <span id="team2Caption" class="teamCaption">Комманда 2</span>
+            </div>
+            <div id="team2Stats">
+                <div class="teamLives">Жизни: <span id="team2Lives">0</span></div>
+                <div class="teamCoins">Монеты: <span id="team2Coins">0</span></div>
+            </div>
+            <div id="team2users"></div>
+        </div>
+    </div>
+    <div id="controls">
+        <button id="btnGameList" class="game-btn">К списку игр</button>
+        <button id="btnStart" class="game-btn hidden">Начать игру</button>
+        <button id="btnConnect" class="game-btn hidden">Подключиться к игре (случайно)</button>
+        <button id="btnConnectPolice" class="game-btn hidden">Подключиться к полиции</button>
+        <button id="btnConnectThief" class="game-btn hidden">Подключиться к мошенникам</button>
+        <button id="btnLeave" class="game-btn hidden">Покинуть игру</button>
+        <button id="btnPause" class="game-btn hidden">Пауза</button>
+        <button id="btnCancel" class="game-btn hidden">Прервать игру</button>
+    </div>
+    <div id="console">
+    </div>
+</div>
 <div class="hidden">
     <img id="img_heart"
          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJzdmdfaGVhcnQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9
@@ -46,36 +98,36 @@ MC4zYzAtMC4xLTAuMS0wLjQtMC4xLTAuNmMtMC4yLTAuNi0wLjUtMS4yLTAuOS0xLjcKYy0wLjQ
 tMC40LTAuNC0xLDAtMS40YzAuNC0wLjQsMS0wLjQsMS40LDBjMCwwLDAuMSwwLjEsMC4yLDAuMm
 MwLjUsMC43LDEsMS41LDEuMiwyLjNjMC4xLDAuMywwLjEsMC42LDAuMiwwLjlsMCwwLjMKYzAsM
 C4yLDAsMC40LDAsMC43YzAsMC4yLDAsMC40LDAsMC43QzIzLjUsMTUuMSwxNi4zLDIyLDEyLDIy
-eiIvPgo8L2c+CjwvZz4KPC9nPgo8L3N2Zz4="/>
+eiIvPgo8L2c+CjwvZz4KPC9nPgo8L3N2Zz4=" />
     <img id="img_coin"
          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0
 iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNXB4IiBoZWlnaHQ9IjI1cHgiIHZpZXdCb3g9IjAgMCAyNS
 AyNSI+CjxjaXJjbGUgY3g9IjEyLjUiIGN5PSIxMi41IiByPSI3IiBmaWxsPSIjRkZENzAwIiBzd
-HJva2U9IiNEQUE1MjAiIHN0cm9rZVdpZHRoPSIxIiAvPgo8L3N2Zz4="/>
+HJva2U9IiNEQUE1MjAiIHN0cm9rZVdpZHRoPSIxIiAvPgo8L3N2Zz4=" />
     <img id="img_police"
          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0
 iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNXB4IiBoZWlnaHQ9IjI1cHgiIHZpZXdCb3g9IjAgMCAyNS
 AyNSI+Cjxwb2x5Z29uIHBvaW50cz0iMywyMiAxMi41LDMgMjIsMjIiIGZpbGw9Im5vbmUiIHN0c
-m9rZT0iZ3JlZW4iIHN0cm9rZVdpZHRoPSIyIiAvPgo8L3N2Zz4="/>
+m9rZT0iZ3JlZW4iIHN0cm9rZVdpZHRoPSIyIiAvPgo8L3N2Zz4=" />
     <img id="img_police_self"
          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0
 iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNXB4IiBoZWlnaHQ9IjI1cHgiIHZpZXdCb3g9IjAgMCAyNS
 AyNSI+Cjxwb2x5Z29uIHBvaW50cz0iMywyMiAxMi41LDMgMjIsMjIiIGZpbGw9Im5vbmUiIHN0c
 m9rZT0iZ3JlZW4iIHN0cm9rZVdpZHRoPSIyIiAvPgo8cG9seWdvbiBwb2ludHM9IjYsMjAgMTIu
 NSw3IDE5LDIwIiBmaWxsPSJncmVlbiIgc3Ryb2tlPSJncmVlbiIgc3Ryb2tlV2lkdGg9IjIiIC8
-+Cjwvc3ZnPg=="/>
++Cjwvc3ZnPg==" />
     <img id="img_thief"
          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0
 iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNXB4IiBoZWlnaHQ9IjI1cHgiIHZpZXdCb3g9IjAgMCAyNS
 AyNSI+Cjxwb2x5Z29uIHBvaW50cz0iMywxMi41IDEyLjUsMyAyMiwxMi41IDEyLjUsMjIiIGZpb
-Gw9Im5vbmUiIHN0cm9rZT0iYmx1ZSIgc3Ryb2tlV2lkdGg9IjIiIC8+Cjwvc3ZnPg=="/>
+Gw9Im5vbmUiIHN0cm9rZT0iYmx1ZSIgc3Ryb2tlV2lkdGg9IjIiIC8+Cjwvc3ZnPg==" />
     <img id="img_thief_self"
          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0
 iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNXB4IiBoZWlnaHQ9IjI1cHgiIHZpZXdCb3g9IjAgMCAyNS
 AyNSI+Cjxwb2x5Z29uIHBvaW50cz0iMywxMi41IDEyLjUsMyAyMiwxMi41IDEyLjUsMjIiIGZpb
 Gw9Im5vbmUiIHN0cm9rZT0iYmx1ZSIgc3Ryb2tlV2lkdGg9IjIiIC8+Cjxwb2x5Z29uIHBvaW50
 cz0iNiwxMi41IDEyLjUsNiAxOSwxMi41IDEyLjUsMTkiIGZpbGw9ImJsdWUiIHN0cm9rZT0iYmx
-1ZSIgc3Ryb2tlV2lkdGg9IjIiIC8+Cjwvc3ZnPg=="/>
+1ZSIgc3Ryb2tlV2lkdGg9IjIiIC8+Cjwvc3ZnPg==" />
     <img id="img_switch"
          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0
 iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNXB4IiBoZWlnaHQ9IjI1cHgiIHZpZXdCb3g9IjAgMCAyNS
@@ -84,22 +136,22 @@ TE9IjMiIHgyPSI3IiB5Mj0iMjIiIC8+CjxsaW5lIHgxPSIzIiB5MT0iOCIgeDI9IjciIHkyPSI0
 IiAvPgo8bGluZSB4MT0iMTEiIHkxPSI4IiB4Mj0iNyIgeTI9IjQiIC8+CjxsaW5lIHgxPSIxOCI
 geTE9IjMiIHgyPSIxOCIgeTI9IjIyIiAvPgo8bGluZSB4MT0iMTQiIHkxPSIxNyIgeDI9IjE4Ii
 B5Mj0iMjEiIC8+CjxsaW5lIHgxPSIyMiIgeTE9IjE3IiB4Mj0iMTgiIHkyPSIyMSIgLz4KPC9nP
-go8L3N2Zz4="/>
+go8L3N2Zz4=" />
 </div>
 <!--  TODO: Раскомментировать при начале работы с сервером -->
-<!--<script src="app.js"></script>-->
-<!--<script>-->
-<!--    (function() {-->
-<!--        var gameApi = new GameApi();-->
-<!--        gameApi.questor.on("unauthorized", function () {-->
-<!--            window.location.replace("../login");-->
-<!--        });-->
-<!--        gameApi.questor.login();-->
-<!--        var gameState = new app.game.GameState(gameApi);-->
-<!--        new app.game.GameView($("#game"), $("#loading"), $("#loadError"), gameState);-->
-<!--        gameState.request();-->
-<!--    })();-->
+<script src="app.js"></script>
+<script>
+    (function () {
+        var gameApi = new GameApi();
+        gameApi.questor.on("unauthorized", function () {
+            window.location.replace("../login");
+        });
+        gameApi.questor.login();
+        var gameState = new app.game.GameState(gameApi);
+        new app.game.GameView($("#game"), $("#loading"), $("#loadError"), gameState);
+        gameState.request();
+    })();
 
-<!--</script>-->
+</script>
 </body>
 </html>
