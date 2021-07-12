@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <!--  TODO: Раскомментировать при начале работы с сервером -->
 <!--    <script src="modernizr.js"></script>-->
 <!--    <script src="/js/jquery.js"></script>-->
@@ -11,7 +12,66 @@
     <title>Игра - Полицейские и Мошенники</title>
 </head>
 <body>
-<!-- TODO: Task 0. Построить вёрстку приложения по макету используя для сетки bootstrap -->
+    <div id="game" class = "container">
+        <div id="main">
+            <div id="gameCaption">
+                <h1 align="center">Полицейские и мошенники</h1>
+            </div>
+    <hr>
+     <div name="timer">
+         <h3>Осталось времени до смены ролей:
+             <span id="switchTimer" class="game-timer-ok">00:00 </span> 
+        </h3>
+     </div>
+     <br>
+     <table width=100%>
+         <tr>
+             <td valign="top" width=28%><div class="statistics">
+                 <ul id="team1">
+                     <li id="team1Caption"><b>Название команды: </b></li>
+                     <li id="team1Coins">Очки: </li>
+                     <li id="team1Lives">Осталось жизней: </li>
+                     <ul id="team1Users" class="list-group list-group-flush">
+                        <li>Игрок 1:</li>
+                        <li>Игрок 2:</li>
+                        <li>Игрок 3:</li>
+                    </ul>
+                 </ul>
+             </div></td>
+             <td width=40%>
+                 <div id="gameCanvas" class="field"></div>
+             </td>
+             <td valign="top" width=28%><div class="statistics">
+                <ul id="team2">
+                    <li id="team2Caption"><b>Название команды: </b></li>
+                    <li id="team2Coins">Очки: </li>
+                    <li id="team2Lives">Осталось жизней: </li>
+                    <ul id="team2Users" class="list-group list-group-flush">
+                        <li>Игрок 1:</li>
+                        <li>Игрок 2:</li>
+                        <li>Игрок 3:</li>
+                    </ul>
+                </ul>
+            </div></td>
+         </tr>
+       </div>
+     <div id="button">
+         <button id="btnGameList" type="button" class="btn btn-outline-secondary">К списку игр</button>
+         <button id="btnStart" type="button" class="btn btn-outline-secondary">Начать</button>
+         <button id="btnConnect" type="button" class="btn btn-outline-secondary">Подключиться к игре(случайно)</button>
+         <button id="btnConnectPolice" type="button" class="btn btn-outline-secondary">Подключиться к полиции</button>
+         <button id="btnConnectThief" type="button" class="btn btn-outline-secondary">Подключиться к мошенникам</button>
+         <button id="btnLeave" type="button" class="btn btn-outline-secondary">Покинуть игру</button>
+         <button id="btnPause" type="button" class="btn btn-outline-secondary">Пауза</button>
+         <button id="btnCancel" type="button" class="btn btn-outline-danger">Прервать игру</button>
+     </div>
+    </div>  <!--я не уверена что он должен закрываться здесь-->
+
+    <div id="console"></div>
+    <div id="loading"></div>
+    <div id="loadError"></div>
+
+
 <div class="hidden">
     <img id="img_heart"
          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJzdmdfaGVhcnQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9

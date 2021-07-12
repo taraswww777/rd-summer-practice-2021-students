@@ -1,5 +1,12 @@
 # RD summer practice 2021
-# Main development branch
+
+# First day of development branch
+
+## Команда проекта:
+* Климчук Н. В.
+* Булгаков Ю. А.
+* Паринова А. Д.
+* Нестерович В. О.
 
 ## Работа
 Для отладки можно вписать `debugger` в нужное место кода

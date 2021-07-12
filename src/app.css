@@ -1,0 +1,38 @@
+.hidden{
+    display: none;
+  }
+  
+div.statistics {
+    color: black;
+    width: 60%;
+    text-align: left;
+}
+
+div.log {
+    color: black;
+    width: 60%;
+    text-align: left;
+}
+
+li {
+    list-style-type: none;
+}
+
+.field {
+   background-color: gray;
+    padding: 150px;
+    height: 140px;
+}
+
+.game-timer-ok {
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    padding: 10px 0;
+}
+
+#button {
+    position: fixed;
+    bottom: 0;
+    right: 15%;
+}
