@@ -19,10 +19,9 @@
             </div>
     <hr>
      <div name="timer">
-         <h3>Осталось времени до смены ролей: </h3>
-     </div>
-     <div id="switchTimer">
-        <span class="game-timer-ok">00:00 </span>
+         <h3>Осталось времени до смены ролей:
+             <span id="switchTimer" class="game-timer-ok">00:00 </span> 
+        </h3>
      </div>
      <br>
      <table width=100%>
@@ -30,27 +29,30 @@
              <td valign="top" width=28%><div class="statistics">
                  <ul id="team1">
                      <li id="team1Caption"><b>Название команды: </b></li>
-                     <li id="team1Users">Игроки: </li>
                      <li id="team1Coins">Очки: </li>
                      <li id="team1Lives">Осталось жизней: </li>
-                 </ul>
-                 <br>
-                 <ul id="team2">
-                     <li id="team2Caption"><b>Название команды: </b></li>
-                     <li id="team2Users">Игроки: </li>
-                     <li id="team2Coins">Очки: </li>
-                     <li id="team2Lives">Осталось жизней: </li>
+                     <ul id="team1Users" class="list-group list-group-flush">
+                        <li>Игрок 1:</li>
+                        <li>Игрок 2:</li>
+                        <li>Игрок 3:</li>
+                    </ul>
                  </ul>
              </div></td>
              <td width=40%>
                  <div id="gameCanvas" class="field"></div>
              </td>
-             <td valign="top">
-                <div>
-                     <h4 style="padding-left: 60px;">Лог игры:</h4>
-                     <div class="log" style="float: right;"></div>
-                 </div>
-             </td>
+             <td valign="top" width=28%><div class="statistics">
+                <ul id="team2">
+                    <li id="team2Caption"><b>Название команды: </b></li>
+                    <li id="team2Coins">Очки: </li>
+                    <li id="team2Lives">Осталось жизней: </li>
+                    <ul id="team2Users" class="list-group list-group-flush">
+                        <li>Игрок 1:</li>
+                        <li>Игрок 2:</li>
+                        <li>Игрок 3:</li>
+                    </ul>
+                </ul>
+            </div></td>
          </tr>
        </div>
      <div id="button">
